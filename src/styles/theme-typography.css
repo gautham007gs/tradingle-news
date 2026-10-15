@@ -1,0 +1,195 @@
+/**
+ * Tradingle typography — Rubik stack, excerpt tone, article body rhythm.
+ */
+
+:root {
+  --it-excerpt-text: #666666;
+}
+
+.dark {
+  --it-excerpt-text: #a3a3a3;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+.top-nav,
+.trd-layout-quicklinks,
+.trd-layout-page,
+.site-footer,
+.article-comments-drawer {
+  font-family: var(--it-fontfamily, var(--ff-ui)) !important;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.headline-link,
+.trd-headline-hero,
+.trd-headline-lg,
+.trd-headline-md,
+.trd-headline-sm,
+.trd-section-head,
+.trd-layout-lead-title,
+.trd-layout-side-headline,
+.trd-layout-column-title,
+.trd-layout-module-title,
+.trd-layout-article-title,
+.trd-layout-mini-lead-title,
+.trd-layout-headline-rail-item h3,
+.trd-layout-mini-rail-card h3,
+.trd-layout-side-title,
+.trd-layout-opinion-item h3,
+.trd-layout-spotlight-title,
+.trd-layout-rail-card h4,
+.article-more-copy h4,
+.article-more-heading,
+.trd-layout-section-block > h2 span:first-child {
+  font-family: var(--it-fontfamily, var(--ff-ui)) !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--it-fontfamily, var(--ff-ui));
+}
+
+html:not(.dark) .trd-headline-hero,
+html:not(.dark) .trd-layout-article-title,
+html:not(.dark) .trd-layout-article-layout .trd-layout-article-title {
+  color: var(--it-primary-text) !important;
+}
+
+p.trd-excerpt,
+p.trd-excerpt-sm,
+.trd-excerpt,
+.trd-excerpt-sm,
+.trd-layout-page .trd-excerpt,
+.trd-layout-page .trd-excerpt-sm,
+.trd-article-deck {
+  color: var(--it-excerpt-text) !important;
+  font-family: var(--it-fontfamily, var(--ff-ui)) !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+  text-justify: auto !important;
+  hyphens: none;
+}
+
+.trd-excerpt,
+.trd-excerpt-sm,
+p.trd-excerpt,
+p.trd-excerpt-sm {
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+}
+
+.trd-excerpt-sm,
+p.trd-excerpt-sm {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+.trd-article-deck {
+  font-size: clamp(16px, 1.35vw, 18px) !important;
+  line-height: 1.55 !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  max-width: 720px;
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+}
+
+.dark .trd-article-deck {
+  color: var(--it-excerpt-text) !important;
+}
+
+html:not(.dark) .article-body p,
+html:not(.dark) .cms-article-content p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #212121;
+  margin-bottom: var(--it-story-para-gap, 20px);
+  text-align: left;
+}
+
+.dark .article-body p,
+.dark .cms-article-content p {
+  font-family: var(--it-fontfamily, var(--ff-ui)) !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+  text-align: left;
+}
+
+.trd-timestamp {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+
+html:not(.dark) .trd-timestamp {
+  color: var(--it-metadata-text) !important;
+}
+
+.dark .trd-timestamp {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.headline-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.22s ease, opacity 0.22s ease;
+}
+
+html:not(.dark) :not(.top-nav):not(.site-footer):not(.top-nav-drawer) .headline-link:hover,
+html:not(.dark) :not(.top-nav):not(.site-footer):not(.top-nav-drawer) a.headline-link:hover {
+  color: color-mix(in srgb, var(--it-primary-text, #000) 72%, var(--it-brand, #cc0000)) !important;
+  opacity: 0.92;
+}
+
+.dark :not(.top-nav):not(.site-footer):not(.top-nav-drawer) .headline-link:hover {
+  color: color-mix(in srgb, #ffffff 78%, hsl(var(--primary))) !important;
+  opacity: 0.94;
+}
+
+.top-nav .headline-link,
+.site-footer .headline-link,
+.top-nav-drawer .headline-link {
+  background-image: none;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+.top-nav .headline-link:hover,
+.top-nav-drawer .headline-link:hover {
+  color: hsl(0 0% 100% / 0.98) !important;
+}
+
+.article-body,
+.cms-article-content {
+  font-family: var(--it-fontfamily, var(--ff-ui)) !important;
+}
+
+.section-dark .trd-excerpt,
+.section-dark .trd-excerpt-sm,
+.trd-hero-summary.trd-excerpt {
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+
+.trd-layout-spotlight-card .trd-excerpt {
+  color: rgba(255, 255, 255, 0.65) !important;
+}

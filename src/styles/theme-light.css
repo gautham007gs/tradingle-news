@@ -1,0 +1,437 @@
+/**
+ * Tradingle light theme — white content canvas with dark navigation chrome.
+ */
+
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) .trd-layout-page,
+html:not(.dark) .trd-layout-home-shell,
+html:not(.dark) .min-h-screen.bg-background,
+html:not(.dark) .bg-background,
+html:not(.dark) .bg-card,
+html:not(.dark) .section-alt,
+html:not(.dark) .section-editorial,
+html:not(.dark) .trd-layout-story-rail,
+html:not(.dark) .trd-layout-breadcrumbs,
+html:not(.dark) .trd-layout-article-layout,
+html:not(.dark) .trd-layout-lead-card,
+html:not(.dark) .trd-layout-news-column,
+html:not(.dark) .trd-layout-column-package,
+html:not(.dark) .trd-layout-rail-module,
+html:not(.dark) .trd-layout-section-block,
+html:not(.dark) .trd-layout-below-top-grid,
+html:not(.dark) .trd-card-hover {
+  background-color: var(--it-whitebg) !important;
+  background-image: none !important;
+}
+
+html:not(.dark) .trd-layout-below-top-grid > *:not(.trd-layout-spotlight-card):not(.trd-layout-below-sidebar) {
+  background-color: var(--it-whitebg) !important;
+  background-image: none !important;
+}
+
+html:not(.dark) .trd-card-hover {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+html:not(.dark) .trd-card-hover:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+html:not(.dark) .trd-layout-quicklinks {
+  background: var(--it-whitebg) !important;
+  border-color: var(--it-border) !important;
+}
+
+html:not(.dark) .trd-layout-quicklinks a,
+html:not(.dark) .quicklinks-item {
+  color: var(--it-secondary-text) !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+html:not(.dark) .quicklinks-label {
+  color: var(--it-muted-text) !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-right-color: var(--it-border);
+}
+
+html:not(.dark) .quicklinks-item:hover {
+  color: var(--it-brand) !important;
+}
+
+/* Dark navigation chrome */
+html:not(.dark) .top-nav,
+html:not(.dark) .top-nav-bar,
+html:not(.dark) .top-nav-search,
+html:not(.dark) .top-nav-mega,
+html:not(.dark) .top-nav-dropdown,
+html:not(.dark) .top-nav-drawer,
+html:not(.dark) .top-nav-search-results {
+  background: var(--it-navbg) !important;
+  border-color: hsl(0 0% 100% / 0.1) !important;
+  color: var(--it-nav-fg) !important;
+}
+
+html:not(.dark) .top-nav button,
+html:not(.dark) .top-nav a {
+  color: hsl(0 0% 100% / 0.9);
+}
+
+html:not(.dark) .top-nav-link,
+html:not(.dark) .top-nav-util-btn,
+html:not(.dark) .top-nav-mobile-link,
+html:not(.dark) .top-nav-drawer-title,
+html:not(.dark) .top-nav-mobile-menu-label {
+  color: hsl(0 0% 100% / 0.92) !important;
+}
+
+html:not(.dark) .top-nav-link:hover,
+html:not(.dark) .top-nav-link--active,
+html:not(.dark) .top-nav-util-btn:hover,
+html:not(.dark) .top-nav-util-btn--active,
+html:not(.dark) .top-nav-mobile-link--active {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .top-nav-link:hover,
+html:not(.dark) .top-nav-link--active {
+  box-shadow: inset 0 -2px 0 var(--it-brand);
+}
+
+html:not(.dark) .top-nav-util-btn:hover,
+html:not(.dark) .top-nav-util-btn--active {
+  background: hsl(0 0% 100% / 0.12) !important;
+}
+
+html:not(.dark) .top-nav .headline-link,
+html:not(.dark) .top-nav .headline-link:hover {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+html:not(.dark) .top-nav-mobile-sub {
+  background: hsl(0 0% 100% / 0.06) !important;
+}
+
+html:not(.dark) .top-nav-mobile-sublink {
+  color: hsl(0 0% 100% / 0.72) !important;
+}
+
+html:not(.dark) .top-nav-drawer-action {
+  color: hsl(0 0% 100% / 0.88) !important;
+  background: hsl(0 0% 100% / 0.08) !important;
+  border-color: hsl(0 0% 100% / 0.12) !important;
+}
+
+html:not(.dark) .top-nav-mega-heading {
+  color: hsl(0 0% 100% / 0.95) !important;
+}
+
+html:not(.dark) .top-nav-mega-link {
+  color: hsl(0 0% 100% / 0.72) !important;
+}
+
+html:not(.dark) .top-nav-mega-link:hover {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .top-nav-mega-kicker,
+html:not(.dark) .top-nav-mega-close {
+  color: hsl(0 0% 100% / 0.78) !important;
+}
+
+html:not(.dark) .top-nav-search-result,
+html:not(.dark) .top-nav-search-result .top-nav-search-title,
+html:not(.dark) .top-nav-search-result span {
+  color: hsl(0 0% 100% / 0.92) !important;
+}
+
+html:not(.dark) .top-nav-drawer,
+html:not(.dark) .top-nav-drawer-nav,
+html:not(.dark) .top-nav-drawer-footer {
+  color: hsl(0 0% 100% / 0.92) !important;
+}
+
+html:not(.dark) .top-nav-mobile-sublink,
+html:not(.dark) .top-nav-mobile-link {
+  color: hsl(0 0% 100% / 0.92) !important;
+}
+
+html:not(.dark) .top-nav-search-icon {
+  color: hsl(0 0% 100% / 0.55) !important;
+}
+
+html:not(.dark) .top-nav-search-submit {
+  color: #ffffff !important;
+  background: hsl(var(--primary)) !important;
+}
+
+html:not(.dark) .top-nav-search-input {
+  color: #ffffff !important;
+  background: hsl(0 0% 100% / 0.08) !important;
+  border-color: hsl(0 0% 100% / 0.14) !important;
+}
+
+html:not(.dark) .top-nav-search-input::placeholder {
+  color: hsl(0 0% 100% / 0.45) !important;
+}
+
+html:not(.dark) .top-nav-search-input::placeholder {
+  color: hsl(0 0% 100% / 0.45) !important;
+}
+
+html:not(.dark) .top-nav-search-title {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .top-nav-search-tag {
+  color: var(--it-brand) !important;
+}
+
+html:not(.dark) .top-nav-search-time,
+html:not(.dark) .top-nav-search-empty {
+  color: hsl(0 0% 100% / 0.55) !important;
+}
+
+html:not(.dark) .trd-logo-part--light {
+  color: hsl(0 0% 100% / 0.55) !important;
+}
+
+html:not(.dark) .trd-logo-part--bold {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .trd-logo-dot {
+  background: var(--it-brand) !important;
+}
+
+html:not(.dark) .trd-layout-spotlight-card {
+  background:
+    linear-gradient(145deg, hsl(214 28% 18%) 0%, hsl(222 35% 8%) 55%, hsl(0 0% 6%) 100%) !important;
+  border-color: hsl(214 22% 22%) !important;
+}
+
+html:not(.dark) .trd-layout-spotlight-label {
+  color: var(--it-brand) !important;
+}
+
+html:not(.dark) .trd-layout-spotlight-kicker,
+html:not(.dark) .trd-layout-spotlight-title {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+html:not(.dark) .trd-layout-spotlight-kicker {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+html:not(.dark) .section-dark,
+html:not(.dark) .editorial-spotlight-section {
+  background: hsl(0 0% 8%) !important;
+  color: #f4f4f4 !important;
+}
+
+html:not(.dark) .editorial-spotlight-heading,
+html:not(.dark) .editorial-spotlight-title {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .editorial-spotlight-meta,
+html:not(.dark) .editorial-spotlight-side-title {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+html:not(.dark) .editorial-spotlight-side-link:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Stitch section-title style in light mode */
+html:not(.dark) .trd-section-head {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--it-border);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+html:not(.dark) .trd-section-head::before {
+  display: none;
+}
+
+html:not(.dark) .trd-section-head-alt {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  border-bottom: 1px solid var(--it-border);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+/* Stitch major section heading — red 2px bottom border in light mode */
+html:not(.dark) .trd-editorial-section-head {
+  border-bottom: 2px solid #cc0000;
+  padding-bottom: 8px;
+  margin-bottom: 28px;
+}
+
+html:not(.dark) .trd-editorial-section-title {
+  color: #0f1117;
+}
+
+html:not(.dark) .trd-section-heading {
+  border-bottom: 2px solid #cc0000;
+  color: #0f1117;
+}
+
+/* Stitch dual-category section heading — clean 1px border */
+html:not(.dark) .dual-category-heading {
+  border-bottom: 1px solid var(--it-border);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+html:not(.dark) .dual-category-heading a {
+  color: #0f1117;
+}
+
+/* Stitch trending bar — white background with borders */
+html:not(.dark) .trending-bar {
+  background: #ffffff;
+  border-top: 1px solid #dde0e8;
+  border-bottom: 1px solid #dde0e8;
+}
+
+html:not(.dark) .trending-bar-pill {
+  color: rgba(26, 31, 44, 0.75);
+}
+
+html:not(.dark) .trending-bar-pill::after {
+  background: #dde0e8;
+}
+
+html:not(.dark) .trending-bar-pill:hover {
+  color: #cc0000;
+}
+
+/* Article rail heading — Stitch small head style */
+html:not(.dark) .article-rail-heading {
+  border-bottom: 1px solid var(--it-border);
+  color: #0f1117;
+}
+
+/* Home section heading bar — Stitch style */
+html:not(.dark) .home-section-heading-bar {
+  border-bottom: 1px solid var(--it-border);
+}
+
+/* Home editorial accent bar — hide in light mode (Stitch doesn't use left bars) */
+html:not(.dark) .trd-editorial-section-accent {
+  display: none;
+}
+
+html:not(.dark) .trd-news-section {
+  border-top: 1px solid var(--it-border);
+}
+
+html:not(.dark) .trd-divider,
+html:not(.dark) .trd-layout-list-item,
+html:not(.dark) .trd-layout-small-lead,
+html:not(.dark) .trd-layout-rail-module,
+html:not(.dark) .trd-layout-section-block,
+html:not(.dark) .trd-layout-article-meta,
+html:not(.dark) .article-more-section,
+html:not(.dark) .trd-layout-story-rail {
+  border-color: var(--it-border) !important;
+}
+
+html:not(.dark) .trd-layout-top-grid,
+html:not(.dark) .trd-layout-main-grid,
+html:not(.dark) .trd-layout-news-columns {
+  gap: var(--it-widget-gap);
+}
+
+html:not(.dark) .trd-ad-slot {
+  background: var(--it-ad-bg);
+  border: 1px dashed var(--it-widget-border);
+  color: var(--it-metadata-text);
+}
+
+html:not(.dark) .trd-category-tag {
+  color: var(--it-cat-brand);
+}
+
+html:not(.dark) .trd-timestamp::before {
+  background: var(--it-brand);
+}
+
+/* Dark footer chrome */
+html:not(.dark) .site-footer {
+  background: var(--it-footer-bg) !important;
+  color: var(--it-footer-fg) !important;
+  border-top: 1px solid hsl(0 0% 100% / 0.08) !important;
+}
+
+html:not(.dark) .site-footer-tagline {
+  color: hsl(0 0% 100% / 0.62) !important;
+}
+
+html:not(.dark) .site-footer-social-link {
+  color: hsl(0 0% 100% / 0.85) !important;
+  background: hsl(0 0% 100% / 0.06) !important;
+  border: 1px solid hsl(0 0% 100% / 0.12) !important;
+}
+
+html:not(.dark) .site-footer-social-link:hover {
+  color: #fff !important;
+  border-color: var(--it-brand) !important;
+  background: hsl(0 100% 40% / 0.15) !important;
+}
+
+html:not(.dark) .site-footer-col-title {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .site-footer-link {
+  color: hsl(0 0% 100% / 0.68) !important;
+}
+
+html:not(.dark) .site-footer-link:hover {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .site-footer-featured-link {
+  color: var(--it-brand) !important;
+}
+
+html:not(.dark) .site-footer-featured-link:hover {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .site-footer-legal {
+  background: hsl(0 0% 0% / 0.22) !important;
+  border-top: 1px solid hsl(0 0% 100% / 0.08) !important;
+}
+
+html:not(.dark) .site-footer-copy,
+html:not(.dark) .site-footer-legal-link {
+  color: hsl(0 0% 100% / 0.52) !important;
+}
+
+html:not(.dark) .site-footer-legal-link:hover {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .trd-logo--footer .trd-logo-part--light {
+  color: hsl(0 0% 100% / 0.55) !important;
+}
+
+html:not(.dark) .trd-logo--footer .trd-logo-part--bold {
+  color: #ffffff !important;
+}

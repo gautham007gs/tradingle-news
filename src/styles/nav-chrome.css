@@ -1,0 +1,155 @@
+/**
+ * Navigation chrome — always dark (nav + footer) regardless of content theme.
+ */
+
+/* Search panel on dark nav — readable input in both themes */
+.top-nav-search-inner {
+  background: hsl(0 0% 100% / 0.06) !important;
+  border-color: hsl(0 0% 100% / 0.14) !important;
+}
+
+.top-nav-search-input {
+  color: #f4f4f4 !important;
+}
+
+.top-nav-search-input::placeholder {
+  color: hsl(0 0% 100% / 0.45) !important;
+}
+
+.top-nav-search-icon {
+  color: hsl(0 0% 100% / 0.55) !important;
+}
+
+html:not(.dark) .top-nav-search-results {
+  background: #1c1c1c !important;
+  border-color: hsl(0 0% 100% / 0.12) !important;
+}
+
+html:not(.dark) .top-nav-search-result .top-nav-search-title {
+  color: #f4f4f4 !important;
+}
+
+html:not(.dark) .top-nav-search-result:hover {
+  background: hsl(0 0% 100% / 0.06) !important;
+}
+
+/* Account dropdown — dark panel on dark nav */
+.top-nav-user-menu {
+  background: #1c1c1c !important;
+  border-color: hsl(0 0% 100% / 0.12) !important;
+  box-shadow: 0 14px 40px hsl(0 0% 0% / 0.35) !important;
+}
+
+.top-nav-user-header {
+  border-bottom-color: hsl(0 0% 100% / 0.1) !important;
+}
+
+.top-nav-user-name {
+  color: #ffffff !important;
+}
+
+.top-nav-user-email {
+  color: hsl(0 0% 100% / 0.58) !important;
+}
+
+.top-nav-user-item {
+  color: hsl(0 0% 100% / 0.88) !important;
+}
+
+.top-nav-user-item:hover {
+  background: hsl(0 0% 100% / 0.08) !important;
+  color: #ffffff !important;
+}
+
+.top-nav-user-item--danger {
+  color: hsl(0 72% 62%) !important;
+}
+
+.top-nav-user-item--danger:hover {
+  background: hsl(0 72% 52% / 0.12) !important;
+}
+
+.top-nav-avatar {
+  flex-shrink: 0;
+  width: 1.65rem;
+  height: 1.65rem;
+  min-width: 1.65rem;
+  min-height: 1.65rem;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.top-nav-profile {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Mobile drawer — force light text on dark drawer in light theme */
+html:not(.dark) .top-nav-drawer,
+html:not(.dark) .top-nav-drawer-nav,
+html:not(.dark) .top-nav-mobile-group {
+  color: #f4f4f4 !important;
+}
+
+html:not(.dark) .top-nav-mobile-link,
+html:not(.dark) .top-nav-mobile-sublink,
+html:not(.dark) .top-nav-drawer-title {
+  color: hsl(0 0% 100% / 0.92) !important;
+}
+
+html:not(.dark) .top-nav-mobile-sublink {
+  color: hsl(0 0% 100% / 0.72) !important;
+}
+
+html:not(.dark) .top-nav-mobile-link--active {
+  color: hsl(var(--primary)) !important;
+}
+
+html:not(.dark) .top-nav-mobile-sublink:hover,
+html:not(.dark) .top-nav-mobile-sublink--all {
+  color: #ffffff !important;
+}
+
+.top-nav-drawer-nav {
+  padding-bottom: 1rem;
+}
+
+.top-nav-drawer-header .top-nav-util-btn {
+  color: hsl(0 0% 100% / 0.9) !important;
+}
+
+/* Footer social — monochrome, no box outline */
+.site-footer-social-link {
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  padding: 0.15rem !important;
+  color: hsl(0 0% 100% / 0.55) !important;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.site-footer-social-link:hover {
+  color: hsl(0 0% 100% / 0.92) !important;
+  background: transparent !important;
+  border: none !important;
+  opacity: 1;
+}
+
+html:not(.dark) .site-footer-social-link {
+  color: hsl(0 0% 100% / 0.55) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+html:not(.dark) .site-footer-social-link:hover {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.site-footer-social-row {
+  gap: 0.75rem;
+}

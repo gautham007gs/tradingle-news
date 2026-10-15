@@ -1,0 +1,959 @@
+/**
+ * Article Page Card Styling with Light/Dark Mode Support
+ * Implements card-based layout with proper theme awareness
+ */
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Light Mode - Explicit Selectors (when dark class is NOT present) */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+html:not(.dark) body,
+html:not(.dark) {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .article-left-rail-inner > section,
+html:not(.dark) .article-left-rail-inner > .article-rail-block,
+html:not(.dark) .article-rail-block {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease;
+}
+
+html:not(.dark) article.article-main-column,
+html:not(.dark) .article-main-column .trd-article-shell,
+html:not(.dark) .trd-article-shell {
+  background-color: transparent !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease;
+}
+
+html:not(.dark) .article-right-rail-inner,
+html:not(.dark) .article-right-rail > * {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+html:not(.dark) .article-left-rail-inner h1,
+html:not(.dark) .article-left-rail-inner h2,
+html:not(.dark) .article-left-rail-inner h3,
+html:not(.dark) .article-left-rail-inner h4,
+html:not(.dark) .article-left-rail-inner h5,
+html:not(.dark) .article-left-rail-inner h6,
+html:not(.dark) article.article-main-column h1,
+html:not(.dark) article.article-main-column h2,
+html:not(.dark) article.article-main-column h3,
+html:not(.dark) article.article-main-column h4,
+html:not(.dark) article.article-main-column h5,
+html:not(.dark) article.article-main-column h6 {
+  color: #181c22 !important;
+}
+
+html:not(.dark) .article-metadata,
+html:not(.dark) .article-meta,
+html:not(.dark) .article-date,
+html:not(.dark) .article-time,
+html:not(.dark) .article-author-info,
+html:not(.dark) .article-tags,
+html:not(.dark) .byline {
+  color: #52596a !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Dark Mode - Explicit Selectors (when dark class IS present) */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+html.dark body,
+html.dark {
+  background-color: #121212 !important;
+}
+
+html.dark .article-left-rail-inner > section,
+html.dark .article-left-rail-inner > .article-rail-block,
+html.dark .article-rail-block {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease;
+}
+
+html.dark article.article-main-column,
+html.dark .article-main-column .trd-article-shell,
+html.dark .trd-article-shell {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease;
+}
+
+html.dark .article-right-rail-inner,
+html.dark .article-right-rail > * {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+html.dark .article-left-rail-inner h1,
+html.dark .article-left-rail-inner h2,
+html.dark .article-left-rail-inner h3,
+html.dark .article-left-rail-inner h4,
+html.dark .article-left-rail-inner h5,
+html.dark .article-left-rail-inner h6,
+html.dark article.article-main-column h1,
+html.dark article.article-main-column h2,
+html.dark article.article-main-column h3,
+html.dark article.article-main-column h4,
+html.dark article.article-main-column h5,
+html.dark article.article-main-column h6 {
+  color: #d8dde8 !important;
+}
+
+html.dark .article-metadata,
+html.dark .article-meta,
+html.dark .article-date,
+html.dark .article-time,
+html.dark .article-author-info,
+html.dark .article-tags,
+html.dark .byline {
+  color: #8b95a8 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Page Background */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+body,
+html,
+.ndtv-article-layout,
+.article-page-shell,
+.trd-container.ndtv-article-layout {
+  background-color: var(--page-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Article Page Grid Layout */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.article-page-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.article-page-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  gap: 32px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+@media (min-width: 1280px) {
+  .article-page-grid {
+    grid-template-columns: 340px 1fr 340px;
+    gap: 36px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Left Sidebar - Individual Cards */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.article-left-rail-inner > section,
+.article-left-rail-inner > .article-rail-block,
+.article-rail-block {
+  background-color: var(--card-bg) !important;
+  color: var(--card-text) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  margin-bottom: 20px !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: all 0.3s ease;
+}
+
+.article-left-rail-inner > section:last-child,
+.article-left-rail-inner > .article-rail-block:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Main Article Column - Large Card */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column,
+.article-main-column .trd-article-shell,
+.trd-article-shell {
+  background-color: transparent !important;
+  color: var(--card-text) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease;
+}
+
+/* Set main column width */
+article.article-main-column {
+  min-width: 0;
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Right Sidebar - One Long Vertical Card */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.article-right-rail-inner,
+.article-right-rail > * {
+  background-color: var(--card-bg) !important;
+  color: var(--card-text) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Text and Heading Colors */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+/* Ensure all text inherits theme colors */
+.article-left-rail-inner *,
+article.article-main-column *,
+.article-right-rail-inner *,
+.trd-article-shell * {
+  color: inherit;
+}
+
+/* Headings get explicit color */
+.article-left-rail-inner h1,
+.article-left-rail-inner h2,
+.article-left-rail-inner h3,
+.article-left-rail-inner h4,
+.article-left-rail-inner h5,
+.article-left-rail-inner h6,
+article.article-main-column h1,
+article.article-main-column h2,
+article.article-main-column h3,
+article.article-main-column h4,
+article.article-main-column h5,
+article.article-main-column h6,
+.article-right-rail-inner h1,
+.article-right-rail-inner h2,
+.article-right-rail-inner h3,
+.article-right-rail-inner h4,
+.article-right-rail-inner h5,
+.article-right-rail-inner h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color) !important;
+}
+
+/* Paragraph and text styling */
+p,
+span,
+a,
+div {
+  color: var(--card-text);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Typography Improvements */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column {
+  font-weight: 300;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+article.article-main-column p {
+  font-weight: 300;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+/* Reduce font weight of left sidebar to de-emphasize it */
+.article-left-rail-inner a,
+.article-left-rail-inner p,
+.article-left-rail-inner span,
+.article-left-rail-inner h4 {
+  font-weight: 400 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Secondary Text Colors */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.article-metadata,
+.article-meta,
+.article-date,
+.article-time,
+.article-author-info,
+.article-tags,
+.byline {
+  color: var(--card-text-secondary) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Links inside cards */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column a,
+.article-left-rail-inner a,
+.article-right-rail-inner a {
+  color: var(--card-text);
+  text-decoration: none;
+}
+
+article.article-main-column a:hover,
+.article-left-rail-inner a:hover,
+.article-right-rail-inner a:hover {
+  opacity: 0.8;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Borders and Dividers */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column hr {
+  border-color: var(--card-border) !important;
+  border: none !important;
+  border-top: 1px solid var(--card-border) !important;
+  margin: 20px 0 !important;
+}
+
+.article-left-rail-inner hr,
+.article-right-rail-inner hr {
+  border-color: var(--card-border) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Article Content - Remove inner borders and improve alignment */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column > * {
+  border: none !important;
+}
+
+article.article-main-column section {
+  border: none !important;
+  border-top: 1px solid var(--card-border) !important;
+  padding-top: 20px !important;
+  margin-top: 20px !important;
+}
+
+article.article-main-column section:first-child {
+  border: none !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Remove styling from divs inside article that may have borders */
+article.article-main-column div[style*="border"] {
+  border: none !important;
+}
+
+/* Remove max-width from article body for full width content */
+article.article-main-column .article-body,
+.article-body {
+  max-width: none !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* Ensure proper spacing and alignment */
+article.article-main-column p {
+  margin: 16px 0 !important;
+  line-height: 1.65;
+}
+
+article.article-main-column h2,
+article.article-main-column h3 {
+  margin-top: 24px !important;
+  margin-bottom: 16px !important;
+}
+
+article.article-main-column img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Code blocks */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column code,
+article.article-main-column pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--card-text);
+}
+
+html.dark article.article-main-column code,
+html.dark article.article-main-column pre {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Blockquotes */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column blockquote {
+  border-left: 4px solid var(--card-border);
+  padding-left: 16px;
+  margin-left: 0;
+  color: var(--card-text-secondary);
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Images */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column img,
+.article-left-rail-inner img,
+.article-right-rail-inner img {
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Lists */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column ul,
+article.article-main-column ol,
+.article-left-rail-inner ul,
+.article-left-rail-inner ol,
+.article-right-rail-inner ul,
+.article-right-rail-inner ol {
+  color: var(--card-text);
+}
+
+article.article-main-column li {
+  color: var(--card-text);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Article Action Buttons - Share, Bookmark, Comments */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+/* Ensure share and bookmark buttons are visible */
+.article-more-actions button,
+.article-more-action,
+button[aria-label*="Share"],
+button[aria-label*="Bookmark"],
+button[aria-label*="save"] {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Align action buttons to the left, remove outlines */
+.article-more-actions,
+.article-footer-actions,
+article.article-main-column .article-more-actions {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: 20px !important;
+}
+
+/* Remove button outlines and make them clean */
+.article-more-action button,
+.article-more-actions button,
+article.article-main-column button {
+  outline: none !important;
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Tags/Pills Styling - Professional appearance */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+/* Container for tags/pills */
+.flex.flex-wrap.gap-2.mt-\[24px\].pt-\[16px\].border-t.border-border,
+article.article-main-column .flex.flex-wrap {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding-top: 16px !important;
+  margin-top: 24px !important;
+}
+
+/* Tags label (TOPICS:) */
+.flex.flex-wrap.gap-2.mt-\[24px\].pt-\[16px\].border-t.border-border > span,
+article.article-main-column .flex.flex-wrap > span {
+  display: inline-block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin-right: 4px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Individual pills/tags */
+.flex.flex-wrap.gap-2.mt-\[24px\].pt-\[16px\].border-t.border-border > a,
+.rounded-full.border.border-border,
+article.article-main-column a.rounded-full {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  border-radius: 9999px !important;
+  border: 1px solid var(--card-border) !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+html.dark .rounded-full.border,
+html.dark a.rounded-full {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.rounded-full.border:hover,
+a.rounded-full:hover {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: white !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Responsive Design - Revert cards on mobile */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .article-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-left-rail,
+  .article-right-rail {
+    display: none;
+  }
+
+  article.article-main-column {
+    padding: 24px !important;
+  }
+}
+
+/* Mobile devices - revert to original styling (before cards) */
+@media (max-width: 768px) {
+  /* Reset background to white/default */
+  html:not(.dark) body,
+  html:not(.dark) {
+    background-color: white !important;
+  }
+
+  html.dark body,
+  html.dark {
+    background-color: var(--background) !important;
+  }
+
+  /* Hide sidebars completely on mobile */
+  .article-left-rail,
+  .article-right-rail {
+    display: none !important;
+  }
+
+  /* Adjust grid to show only main content */
+  .article-page-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Main article on mobile - no card styling, comfortable padding */
+  html:not(.dark) article.article-main-column,
+  html:not(.dark) .article-main-column .trd-article-shell,
+  html:not(.dark) .trd-article-shell {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 8px 20px !important;
+    box-shadow: none !important;
+  }
+
+  html.dark article.article-main-column,
+  html.dark .article-main-column .trd-article-shell,
+  html.dark .trd-article-shell {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 8px 20px !important;
+    box-shadow: none !important;
+  }
+
+  .article-page-shell {
+    padding: 0 16px;
+  }
+
+  /* Reduce spacing after article body */
+  article.article-main-column .article-body,
+  .article-body {
+    max-width: none !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Article meta bar - share/bookmark on same line as "Written by" */
+  .article-meta-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .article-meta-copy {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex: 1 !important;
+  }
+
+  .article-more-actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  /* Share and bookmark buttons inline */
+  .article-more-action,
+  .article-more-action button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Professional pills styling */
+  .flex.flex-wrap.gap-2 {
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  /* Pills container - align items vertically centered */
+  .flex.flex-wrap.gap-2 {
+    align-items: center !important;
+  }
+
+  .flex.flex-wrap.gap-2 span {
+    display: inline-block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-right: 4px !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+  }
+
+  .flex.flex-wrap.gap-2 a,
+  .rounded-full.border {
+    min-height: 0 !important;
+    height: auto !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    font-size: 11px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Horizontal card layout - title and image properly structured */
+  .article-more-section {
+    display: block !important;
+  }
+
+  .article-more-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .article-more-row,
+  article.article-main-column .article-more-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-bottom: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 0 0 12px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Horizontal card - title and copy wrapper */
+  .article-more-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    gap: 8px !important;
+  }
+
+  .article-more-title,
+  .article-more-title-link {
+    flex: 1 !important;
+    min-width: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+  }
+
+  .article-more-thumb,
+  .article-more-thumb img {
+    flex: 0 0 70px !important;
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+  }
+
+  /* Horizontal card - action buttons below */
+  .article-more-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .article-more-action button,
+  button[data-action],
+  .article-more-action {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    padding: 6px 10px !important;
+    gap: 6px !important;
+  }
+
+  /* Light theme borders for horizontal cards */
+  html:not(.dark) .article-more-row,
+  html:not(.dark) .article-more-card {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Tables */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+article.article-main-column table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--card-border);
+  color: var(--card-text);
+}
+
+article.article-main-column thead {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+html.dark article.article-main-column thead {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+article.article-main-column th,
+article.article-main-column td {
+  border: 1px solid var(--card-border);
+  padding: 12px;
+  text-align: left;
+  color: var(--card-text);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Buttons and Interactive Elements */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.article-left-rail-inner button,
+article.article-main-column button,
+.article-right-rail-inner button {
+  color: var(--card-text);
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+html.dark .article-left-rail-inner button,
+html.dark article.article-main-column button,
+html.dark .article-right-rail-inner button {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.article-left-rail-inner button:hover,
+article.article-main-column button:hover,
+.article-right-rail-inner button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+html.dark .article-left-rail-inner button:hover,
+html.dark article.article-main-column button:hover,
+html.dark .article-right-rail-inner button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Form Elements */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.article-left-rail-inner input,
+article.article-main-column input,
+.article-right-rail-inner input,
+.article-left-rail-inner textarea,
+article.article-main-column textarea,
+.article-right-rail-inner textarea {
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--card-border);
+  color: var(--card-text);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+html.dark .article-left-rail-inner input,
+html.dark article.article-main-column input,
+html.dark .article-right-rail-inner input,
+html.dark .article-left-rail-inner textarea,
+html.dark article.article-main-column textarea,
+html.dark .article-right-rail-inner textarea {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.article-left-rail-inner input:focus,
+article.article-main-column input:focus,
+.article-right-rail-inner input:focus,
+.article-left-rail-inner textarea:focus,
+article.article-main-column textarea:focus,
+.article-right-rail-inner textarea:focus {
+  outline: none;
+  border-color: var(--card-text);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .article-left-rail-inner input:focus,
+html.dark article.article-main-column input:focus,
+html.dark .article-right-rail-inner input:focus,
+html.dark .article-left-rail-inner textarea:focus,
+html.dark article.article-main-column textarea:focus,
+html.dark .article-right-rail-inner textarea:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Utility: Ensure proper alignment and spacing */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+.article-page-grid > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-left-rail,
+.article-right-rail {
+  position: relative;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* Article sidebar visual differentiation */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+/* Left rail — softer card stack */
+.article-left-rail {
+  border-right: 1px solid var(--card-border);
+  padding-right: 8px;
+}
+
+/* Right rail — distinct vertical card */
+.article-right-rail {
+  border-left: 1px solid var(--card-border);
+  padding-left: 8px;
+}
+
+/* Main content subtle paper/card feel */
+article.article-main-column {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* Responsive: hide sidebars below lg */
+@media (max-width: 1023px) {
+  .article-left-rail,
+  .article-right-rail {
+    display: none !important;
+  }
+  .article-page-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+}

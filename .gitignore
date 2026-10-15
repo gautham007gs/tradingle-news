@@ -1,0 +1,48 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+
+# Environment variables — never commit real secrets
+.env
+.env.*
+
+# Database dumps — contain production user data and password hashes; never commit
+*.sql
+*/*.sql
+# Issue #13: allow migration scripts to be committed — they contain only DDL,
+# no user data. Dumps created from mysqldump/phpMyAdmin etc. should never be here.
+!database/migrations/*.sql
+!database/migrations/**/*.sql
+!api/migrations/*.sql
+Hostinger*
+
+# Common ignores
+node_modules
+.next/
+.DS_Store
+*.tsbuildinfo
+package-lock.json
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local credentials, certificates, uploads, and editor/OS state
+*.pem
+*.key
+*.p12
+*.pfx
+.idea/
+.vscode/
+uploads/
+api/uploads/
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+*.log

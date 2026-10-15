@@ -1,0 +1,20 @@
+# Normalize all text files to LF line endings in the repo, regardless of
+# what line ending a given editor/OS wrote on checkout. Fixes the mixed
+# CRLF/LF situation found across src/ (10 of 120 .tsx files were CRLF) that
+# was causing noisy diffs. Git will still check files out using the native
+# line ending for whoever's working locally if core.autocrlf is set, but
+# what's stored in the repo itself is consistently LF.
+* text=auto eol=lf
+
+# Binary files — never touch line endings, never diff as text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.pdf binary

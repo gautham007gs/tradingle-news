@@ -1,0 +1,300 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   BLOOMBERG THEME — single source of truth for the public design system
+   ─────────────────────────────────────────────────────────────────────────
+   Loaded LAST from app/layout.tsx (after src/index.css and app/globals.css),
+   so unlayered rules here win ties against earlier stylesheets.
+
+   Design language:
+   • Canvas      pure white #ffffff, text #000/#1a1a1a, secondary #6e6e73
+   • Accent      electric blue #2800d7 — kickers, bylines, links, hovers
+   • Chrome      solid-black top nav + footer, white wordmark, hairlines
+   • Rules       hairline #e6e6e6 dividers, 2px black section top-rules
+   • Type        Inter grotesque, tight headlines (-0.02em / 1.05–1.15),
+                 small uppercase kickers (11px / +0.08em)
+   • Cards       no radii, no shadows, no colored pills; hover = blue headline
+
+   Public pages only. The admin/contributor SPAs keep their own styling;
+   legacy --it-* tokens remain aliased in src/index.css for shared surfaces.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Core palette ── */
+  --bb-black: #000000;
+  --bb-ink: #1a1a1a;
+  --bb-grey: #6e6e73;
+  --bb-grey-light: #9a9aa0;
+  --bb-rule: #e6e6e6;
+  --bb-blue: #2800d7;
+  --bb-blue-hover: #1f00ad;
+  --bb-bg: #ffffff;
+  --bb-surface: #f4f4f4;
+
+  /* ── Type scale ── */
+  --bb-font: var(--font-inter, "Inter"), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --bb-tracking-headline: -0.02em;
+  --bb-tracking-kicker: 0.08em;
+
+  /* Alias legacy tokens onto the new system (admin/shared surfaces keep working) */
+  --it-fontfamily: var(--bb-font);
+}
+
+/* Light mode only — public pages never render dark */
+html {
+  color-scheme: light;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY — tight grotesque headlines
+   ─────────────────────────────────────────────────────────────────────────── */
+.trd-headline-hero,
+.trd-headline-lg,
+.trd-headline-md,
+.trd-headline-sm,
+.trd-layout-article-title,
+.trd-layout-lead-title,
+.trd-layout-mini-lead-title,
+.trd-article-headline,
+.article-headline {
+  letter-spacing: var(--bb-tracking-headline) !important;
+  line-height: 1.08 !important;
+  font-weight: 750 !important;
+}
+
+h1 {
+  letter-spacing: var(--bb-tracking-headline);
+  line-height: 1.08;
+  font-weight: 800;
+}
+
+h2,
+h3,
+h4 {
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+body,
+.trd-layout-page,
+.site-footer,
+.top-nav,
+.trd-layout-quicklinks,
+.article-comments-drawer {
+  font-family: var(--bb-font) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   ACCENT — electric blue for kickers, bylines, category labels
+   ─────────────────────────────────────────────────────────────────────────── */
+.trd-category-tag,
+.article-more-category,
+.static-page-kicker,
+.tag-featured-kicker,
+.trd-live-label {
+  color: var(--bb-blue) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: var(--bb-tracking-kicker) !important;
+  text-transform: uppercase !important;
+}
+
+.article-meta-byline,
+.article-meta-author {
+  color: var(--bb-blue) !important;
+}
+
+.article-meta-byline a,
+.article-meta-author:hover,
+.article-meta-author.headline-link:hover {
+  color: var(--bb-blue-hover) !important;
+}
+
+/* Timestamps / metadata — small neutral grey */
+.trd-timestamp,
+.article-date,
+.article-time {
+  color: var(--bb-grey) !important;
+}
+
+/* Headline hover = Bloomberg blue (canvas only; nav/footer stay white) */
+:not(.top-nav):not(.site-footer):not(.top-nav-drawer):not(.article-comments-drawer)
+  .headline-link:hover,
+:not(.top-nav):not(.site-footer):not(.top-nav-drawer):not(.article-comments-drawer)
+  a.headline-link:hover {
+  color: var(--bb-blue) !important;
+  opacity: 1 !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* In-text links inside article body */
+.article-body a:not(.article-meta-author),
+.cms-article-content a {
+  color: var(--bb-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.article-body a:hover,
+.cms-article-content a:hover {
+  color: var(--bb-blue-hover);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   CARDS & SURFACES — flat, square, hairline-separated
+   ─────────────────────────────────────────────────────────────────────────── */
+.trd-layout-page img {
+  border-radius: 0;
+}
+
+.trd-layout-page .rounded-lg,
+.trd-layout-page .rounded-md,
+.trd-layout-page .rounded {
+  border-radius: 0;
+}
+
+.trd-card-hover,
+.trd-layout-rail-card,
+.trd-layout-mini-rail-card,
+.trd-layout-side-title {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.trd-img-hover:hover {
+  opacity: 0.92;
+}
+
+/* Hairline rules everywhere */
+.trd-divider,
+.trd-layout-list-item,
+.trd-news-section {
+  border-color: var(--bb-rule) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   SECTION RAILS — 2px black top rule + uppercase section title
+   ─────────────────────────────────────────────────────────────────────────── */
+.trd-layout-section-block,
+.home-section-heading-bar,
+.article-more-section {
+  border-top: 2px solid var(--bb-black) !important;
+  padding-top: 14px;
+}
+
+.trd-layout-section-block > h2 span:first-child,
+.section-heading-text,
+.trd-section-head,
+.article-more-heading {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--bb-black) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   ARTICLE BODY — 18px/1.6 grotesque reading rhythm
+   ─────────────────────────────────────────────────────────────────────────── */
+.article-body p,
+.cms-article-content p {
+  font-family: var(--bb-font) !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: var(--bb-ink) !important;
+}
+
+.article-body h2,
+.article-body h3,
+.cms-article-content h2,
+.cms-article-content h3 {
+  font-family: var(--bb-font) !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.2 !important;
+  margin-top: 1.6em !important;
+}
+
+/* Bloomberg-style pull quote: heavy black left rule, no background */
+.article-body blockquote,
+.cms-article-content blockquote {
+  border-left: 4px solid var(--bb-black) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 4px 0 4px 20px !important;
+  margin: 28px 0 !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  color: var(--bb-black) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   LISTING MASTHEADS — black section band with tight uppercase title
+   ─────────────────────────────────────────────────────────────────────────── */
+.it-header-band {
+  background: var(--bb-black) !important;
+}
+
+.it-header-title {
+  font-family: var(--bb-font) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.05 !important;
+  text-transform: uppercase !important;
+}
+
+.it-breadcrumb a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Author / tag / search list rows — hairline separated */
+.tag-empty-link,
+.it-author-card a:hover {
+  color: var(--bb-blue);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   CHROME — quicklinks strip, ad slots, skeletons
+   ─────────────────────────────────────────────────────────────────────────── */
+.trd-layout-quicklinks {
+  border-bottom: 1px solid var(--bb-rule) !important;
+}
+
+.quicklinks-item {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Neutral grey ad placeholder — no brand color */
+.trd-ad-slot {
+  background: var(--bb-surface) !important;
+  border: 1px solid var(--bb-rule) !important;
+  border-radius: 0 !important;
+  color: var(--bb-grey) !important;
+}
+
+/* Skeletons match the flat card language */
+[class*="skeleton"] {
+  border-radius: 0 !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [class*="skeleton"] {
+    animation: bb-pulse 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes bb-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
